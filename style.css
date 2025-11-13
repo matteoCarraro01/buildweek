@@ -9,6 +9,7 @@ body {
     background: url(assets/bg.jpg) no-repeat center center fixed;
     background-size: cover;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 150px;
 }
 
 .logo img {
@@ -22,6 +23,36 @@ body {
 .title {
     color: white;
     font-size: 70px;
+
 }
 
-.subtitle {}
+.title2 {
+    margin-top: -30px;
+    font-size: larger;
+}
+
+.subtitle {
+    color: deeppink;
+}
+
+main,
+.testo,
+.lista,
+footer {
+    color: white;
+}
+
+.bottone {
+    font-size: 30px;
+    background-color: #00FFFF;
+    color: black;
+    padding: 15PX 30px;
+}
+
+.quiz {
+    background-color: black;
+}
+
+.containerQuiz {
+    color: white;
+}

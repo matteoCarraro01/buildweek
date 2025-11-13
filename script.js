@@ -113,16 +113,25 @@ const questions = [
 //   const rows = Array.from({ length: 11 }, (_, i) => [i])
 
 // const cols = [3], [4], [5]
-// ]
-
-let question = questions[0].question
-questions[0].incorrect_answers.push(questions[0].correct_answer) //aggiungere Math 
-let answer = questions[0].incorrect_answers
-console.log(question)
-console.log(answer)
+// ]                                            FOR MATTIA 'NSE CANCELLA
 
 
+for (let i = 0; i < questions.length; i++) {
+  let question = questions[i].question;
+  questions[i].incorrect_answers.push(questions[i].correct_answer);
+  let answers = questions[i].incorrect_answers;
 
+
+  questions[i].incorrect_answers = answers.sort(() => Math.random() - 0.5)
+
+  document.getElementById('question').innerText = question
+  console.log(question.incorrect_answers)
+  document.getElementById('btn1').innerText = questions[i].incorrect_answers[0]
+}
+console.log(questions);
+
+
+//const questionButton = document.querySelector('.question');
 // function global(questions) {
 //   for (let i = 0; i <= 10; i++);
 //   if (correct_answer === true) {
