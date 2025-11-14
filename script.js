@@ -116,19 +116,87 @@ const questions = [
 // ]                                            FOR MATTIA 'NSE CANCELLA
 
 
-for (let i = 0; i < questions.length; i++) {
+
+let questionNumber = 0
+let score = 0
+
+function displayQuestion(i) {
   let question = questions[i].question;
   questions[i].incorrect_answers.push(questions[i].correct_answer);
   let answers = questions[i].incorrect_answers;
 
 
-  questions[i].incorrect_answers = answers.sort(() => Math.random() - 0.5)
+  questions[i].incorrect_answers = answers.sort(() => Math.random() - 0.5);
 
-  document.getElementById('question').innerText = question
-  console.log(question.incorrect_answers)
-  document.getElementById('btn1').innerText = questions[i].incorrect_answers[0]
+  document.getElementById('question').innerText = question;
+  console.log(questions[i].incorrect_answers);
+  const risposta1 = document.getElementById('btn1');
+  risposta1.innerText = questions[i].incorrect_answers[0];
+  const risposta2 = document.getElementById('btn2');
+  risposta2.innerText = questions[i].incorrect_answers[1];
+  const risposta3 = document.getElementById('btn3');
+  risposta3.innerText = questions[i].incorrect_answers[2];
+  const risposta4 = document.getElementById('btn4');
+  risposta4.innerText = questions[i].incorrect_answers[3];
+  risposta1.addEventListener('click', function (event) {
+    rispostaClick(event.target.innerText, questionNumber, score)
+  })
+  risposta2.addEventListener('click', function (event) {
+    rispostaClick(event.target.innerText, questionNumber, score)
+  })
+  risposta3.addEventListener('click', function (event) {
+    rispostaClick(event.target.innerText, questionNumber, score)
+  })
+  risposta4.addEventListener('click', function (event) {
+    rispostaClick(event.target.innerText, questionNumber, score)
+  })
 }
+
+
 console.log(questions);
+displayQuestion(questionNumber)
+
+function rispostaClick(testoRisposta, questionNumber, score) {
+  if (testoRisposta === questions[questionNumber].correct_answer) {
+    score++
+
+  }
+  questionNumber++;
+  if (questionNumber >= questions.length) {
+    let result =
+      console.log('quiz finito! Punteggio' + score.length)
+  } else {
+    displayQuestion(questionNumber)
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //const questionButton = document.querySelector('.question');
