@@ -55,4 +55,23 @@ footer {
 
 .containerQuiz {
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+#answers {
+    display: flex;
+    justify-content: center;
+    padding: 0%;
+}
+
+#answers2 {
+    display: flex;
+    justify-content: center;
+    padding: 0%;
 }
